@@ -1,0 +1,16 @@
+digraph cleanup_model {
+    node [style=filled, fillcolor=lightgrey, fontname=Arial];
+    edge [color=grey];
+
+    "Stuff that should be backed up" -> "Files" [color=blue];
+    "Stuff that should be backed up" -> "Valuable Data" [color=blue];
+    "Stuff that should be wiped away" -> "Cached Data" [color=red];
+    "Stuff that should be wiped away" -> "Unwanted Files" [color=red];
+    "Stuff that should be wiped away" -> "Unwanted Data" [color=red];
+    "Stuff that should be wiped away" -> "Unused Applications" [color=red];
+
+    "Stuff that should be backed up" -> "Stuff that should be wiped away" [label="is mutually exclusive to"];
+    "Stuff that should be wiped away" -> "Stuff that should be backed up" [label="is mutually exclusive to"];
+
+    { rank=same; "Stuff that should be backed up"; "Stuff that should be wiped away"; }
+}

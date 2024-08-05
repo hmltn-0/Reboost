@@ -1,0 +1,11 @@
+digraph filesystem {
+    "Collection of Bits" -> "Data"
+    "Data" -> "Files"
+    "Files" -> "Executable Code"
+    "Executable Code" -> "Application"
+    "Application" -> "Config Files"
+    "Application" -> "User Data"
+    "Operating System" -> "OS Config Files"
+    "Application" -> "Application Config Files"
+    "Application" -> "Application User Data"
+}
