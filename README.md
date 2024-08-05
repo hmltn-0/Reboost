@@ -20,3 +20,38 @@ These categories are designed to be comprehensive, but can be modified if needed
 ## Usage
 Instructions on how to use the scripts will be provided here.
 
+
+## Platform
+These scripts are intended for macOS and are written in zsh.
+
+## Script Structure
+The script has three main sections:
+
+### 1. Copy Configuration/System Files
+This section of the script copies over configuration and system files from the repository to the appropriate locations on the computer.
+
+```sh
+# Copy configuration files
+cp -r ./config/* ~/Library/Preferences/
+```
+
+### 2. Install Applications/Packages
+This section installs all the applications listed in a file (e.g., `applications.txt`).
+
+```sh
+# Install applications
+while read app; do
+    brew install "$app"
+done < applications.txt
+```
+
+### 3. Copy Personal Documents
+This section copies personal documents to the Documents directory.
+
+```sh
+# Copy personal documents
+cp -r ./Documents/* ~/Documents/
+```
+
+These sections ensure that all your configurations, applications, and personal documents are restored to your computer.
+
